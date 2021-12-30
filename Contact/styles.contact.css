@@ -8,7 +8,6 @@
 
 html {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
   color: var(--dark);
 }
 
@@ -16,6 +15,9 @@ body {
   background: #fff;
   margin: 30px 50px;
   line-height: 1.4;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100; 
+  
 }
 
 .btn {
@@ -27,12 +29,15 @@ body {
 }
 
 img {
-  max-width: 100%;
+  height: 50%;
 }
 
 .wrapper {
   display: grid;
-  grid-gap: 20px;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  height: 100px;
+  margin-bottom: 30px;
 }
 
 /* Navigation */
@@ -41,20 +46,22 @@ img {
   grid-gap: 20px;
   padding: 0;
   list-style: none;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  height: 100px;
 }
 
 .main-nav a {
   background: none;
   display: flex;
-  flex-direction: row;
-  align-content: flex-end;
+  flex-direction: column;
   text-decoration: none;
   padding: 0.8rem;
   text-align: center;
   color: var(--dark);
   text-transform: uppercase;
   font-size: 1.1rem;
+  align-items: center;
+  border-bottom: 1px solid var(--dark);
 }
 
 .main-nav a:hover {
@@ -63,40 +70,32 @@ img {
 }
 
 .img-logo {
-  max-width: 100%;
   max-height: 100%;
   display: block;
+  animation: change-background 2s linear infinite alternate;
 }
 
-/* Top Container */
+.content {
+  display: grid;
+  grid-auto-flow: column;
+  padding: 20px;
+}
 .top-container {
   display: grid;
-  grid-gap: 20px;
-  grid-template-areas:
-    'personal-photo'
-    'email linkedin phone';
+  justify-items: center;
+  padding: 20px;
 }
 
-/* Showcase */
-.personal-photo {
-  grid-area: personal-photo;
-
-  background: url('/images/asasas.jpeg');
-  background-size: cover;
-  background-position: center;
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  box-shadow: var(--shadow);
+.my-profile {
+  height: 300px;
+  border-radius: 50%;
 }
 
 /* Boxes */
 .boxes {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .box {
@@ -104,6 +103,11 @@ img {
   text-align: center;
   padding: 1.5rem 2rem;
   box-shadow: var(--shadow);
+  word-wrap:break-word;
+}
+
+h2 {
+  font-weight: 100;
 }
 
 /* Info */
@@ -170,5 +174,23 @@ footer {
       'showcase'
       'top-box-a'
       'top-box-b';
+  }
+}
+
+@keyframes change-background {
+  0% {
+    background: #006d77;
+  }
+  25% {
+    background: #83c5be;
+  }
+  50% {
+    background: #edf6f9;
+  }
+  75% {
+    background: #ffddd2;
+  }
+  100% {
+    background: #e29578;
   }
 }
