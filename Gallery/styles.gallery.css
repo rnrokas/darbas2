@@ -1,8 +1,8 @@
 /* CSS Variables */
 :root {
-  --primary: #ddd;
+  --primary: #edede9;
   --dark: #333;
-  --light: #fff;
+  --light: #f9f8e4;
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
@@ -28,7 +28,8 @@ body {
 }
 
 img {
-  height: 50%;
+  max-width: 70%;
+  height: auto;
 }
 
 .wrapper {
@@ -91,9 +92,8 @@ img {
 .gallery {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 5vw);
   grid-gap: 1.5rem;
-  width: 60%;
+  width: 70%;
   margin: 2rem auto;
 }
 
@@ -104,23 +104,31 @@ img {
   display: block;
 }
 
+.gallery__item{
+  overflow: hidden;
+}
+.gallery__item:hover {
+  transform: scale(1.05);
+  transition: transform .2s; 
+}
+
 .gallery__item--1 {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 5;
 }
 
 .gallery__item--2 {
   grid-column-start: 3;
   grid-column-end: 5;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 5;
 }
 
 .gallery__item--3 {
   grid-column-start: 5;
-  grid-column-end: 9;
+  grid-column-end: 15;
   grid-row-start: 1;
   grid-row-end: 6;
 }
@@ -128,7 +136,7 @@ img {
 .gallery__item--4 {
   grid-column-start: 1;
   grid-column-end: 5;
-  grid-row-start: 3;
+  grid-row-start: 5;
   grid-row-end: 6;
 }
 

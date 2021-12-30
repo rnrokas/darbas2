@@ -1,8 +1,8 @@
 /* CSS Variables */
 :root {
-  --primary: #ddd;
+  --primary: #edede9;
   --dark: #333;
-  --light: #fff;
+  --light: #f9f8e4;
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
@@ -29,7 +29,8 @@ body {
 }
 
 img {
-  height: 50%;
+  max-width: 70%;
+  height: auto;
 }
 
 .wrapper {
